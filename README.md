@@ -11,4 +11,4 @@
       python3 inference_overlap.py -i N24_w_01_reconstructed_binned_5.h5 -m \trained_model_4_layers_N1_to_N32\saved_model       
    b) Linux terminal:
       python3 inference_overlap.py -i N24_w_01_reconstructed_binned_5.h5 -m /trained_model_4_layers_N1_to_N32/saved_model
-5. Inspect the resulting segmented file, and compare it against the provided segmented file (needs unzipping). The provided file and yours should be identical.
+5. Inspect the resulting segmented file, and compare it against the provided segmented file (needs unzipping). The provided file and yours should be identical. FIJI can be used to look at the files (https://imagej.net/software/fiji/downloads). Import *.h5 files into FIJI using the Ilastik plugin (https://www.ilastik.org/documentation/fiji_export/plugin)
