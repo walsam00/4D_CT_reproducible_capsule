@@ -111,7 +111,7 @@ for time_index in range(max_index):
 
 	#save the prediction
     data_out = mask_stack[0:z,:,:,:]
-	filename_out = output_dir + '/' + folder + '_segmented_slim_unet_' + str(time_index + 1) + '.h5'
+	filename_out = output_dir + '/' + folder + '_segmented_unet_' + str(time_index + 1) + '.h5'
 	with h5py.File(filename_out, 'a') as hdf:
 		dset = hdf.create_dataset('data', data_out.shape, dtype=np.float32)
 		hdf['data'][...] = data_out[...]
