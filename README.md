@@ -1,5 +1,7 @@
 # 4D_CT_reproducible_capsule
+This is a reproducible capsule for the code in the following repository: https://github.com/walsam00/4D_CT_code
 
+How to run the code:
 1. Install python 3 (for example from the windows app store)
 2.  Install necessary packages (for example from command line using pip):
     a) python3 -m pip install tensorflow[and-cuda]
