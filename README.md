@@ -4,11 +4,14 @@ This is a reproducible capsule for the code in the following repository: https:/
 How to run the code:
 1. Install python 3 (for example from the windows app store)
 2.  Install necessary packages (for example from command line using pip):
-    a) python3 -m pip install tensorflow[and-cuda]
+    a) python3 -m pip install tensorflow
     b) python3 -m pip install h5py
     c) python3 -m pip install numpy
+    Please note:
     The requirements.txt file contains exact versions of these packages that were used to create this reproducible capsule.
-    However, simply installing the latest versions of the packages like the suggested pip commands do will most likely also work fine.
+    However, simply installing the latest versions of the packages like the suggested pip commands (2a, 2b, 2c) do will most likely work just fine.
+    Tensorflow runs a lot faster when it is able to run on a GPU. For tasks as small as the one in this reproducible capsule, the code should run in reasonable time on the CPU.
+    If desired, the tensorflow package can be installed with GPU binding as follows (this replaces step 2a): python3 -m pip install tensorflow[and-cuda]
 4. Unzip input image (N24_w_01_reconstructed_binned_5.zip) and place the unzipped image file (N24_w_01_reconstructed_binned_5.h5) in the same directory as the python script (UNet_inference.py) and the trained model save state (trained_model_4_layers_N1_to_N32).
 5. Run python code (file paths have to be specified differently based on operating system) to apply the trained CNN to segment the provided reconstructed CT image file:
    a) Windows command line:
