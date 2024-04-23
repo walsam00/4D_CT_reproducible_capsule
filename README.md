@@ -22,3 +22,6 @@ How to run the code:
 
 Users can apply the trained CNN to their own data by changing the import (-i) argument of the python script. Data needs to be in the HDF5 file format (*.h5) and needs to conform to the data shape that the CNN import expects (x: 240 px, y: 240 px, z: any). The data needs to be stored in the HDF5 file in a group named 'data'. The axis order of the data needs to be z,y,x,c (c is a color channel of size 1 - images need to be greyscale). 
 The U-Net that is applied to the data in this example segments images into 4 segmentation categories (mask, background, organic tablet material, inorganic tablet material). A version of the U-Net trained to segment images into three categories for images that lack inorganic material is also available (https://github.com/walsam00/4D_CT_code). The U-Net to be used for segmentation can be specified when running the python script using the 'model_path' (-m) argument.
+
+DOI link to this repository:
+https://zenodo.org/doi/10.5281/zenodo.11046923
