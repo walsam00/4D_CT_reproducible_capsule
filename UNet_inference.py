@@ -1,4 +1,4 @@
-#This code takes a reconstructed CT image of size z,243,243,1 (z can be any size), crops it to size z,240,240,1 (for legacy reasons) and segments it using a pre-trained 3D U-Net
+#This code takes a reconstructed CT image of size z,240,240,1 (z can be any size) and segments it using a pre-trained 3D U-Net
 
 import tensorflow as tf
 import numpy as np
@@ -42,7 +42,8 @@ with h5py.File(input_dir, 'r') as hdf:
 
 #set up output array
 recon_data_out = np.empty([z,240,240,1])
-recon_data_out = data[:,2:-1,2:-1,:]
+recon_data_out = data[...]
+#recon_data_out = data[:,2:-1,2:-1,:]
 
 #batch across z axis
 #do the prediction using an overlap which eliminates the effects of padding at the image borders
@@ -60,7 +61,7 @@ else:
 
 #pad the data to make the sliding window fit
 data_padded = np.zeros([1,((batches-2)*(16-2*overlap)+(2*(16-overlap))),240,240,1])
-data_padded[0,0:z,:,:,:] = data[:,2:-1,2:-1,:]
+data_padded[0,0:z,:,:,:] = data #data[:,2:-1,2:-1,:]
 
 #set up mask and cropped image arrays
 mask_stack = np.empty([((batches-2)*(16-2*overlap)+(2*(16-overlap))),240,240,1])
